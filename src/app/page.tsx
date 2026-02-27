@@ -263,7 +263,7 @@ function ServiceCard({ icon, title, description }: { icon: React.ReactNode, titl
         {icon}
       </div>
       <h3 className="text-xl font-bold mb-3">{title}</h3>
-      <p className="text-neutral-600 leading-relaxed text-sm md:text-base flex-grow">{description}</p>
+      <p className="text-neutral-600 leading-relaxed text-sm md:text-base grow">{description}</p>
       
       <div className="mt-6 pt-6 border-t border-neutral-100 flex items-center text-sm font-medium text-neutral-900">
         <span className="group-hover:mr-2 transition-all">Saber más</span>
