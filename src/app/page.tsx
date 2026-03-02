@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
   Bot, 
@@ -49,9 +50,13 @@ export default function LandingPage() {
         }`}
       >
         <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
-          <a href="#" className="text-2xl font-bold tracking-tighter">
-            J&M<span className="text-neutral-400">.</span>
-          </a>
+          <Link href="/">
+            <img 
+              src="https://df50lbm4qcrt6.cloudfront.net/JYM_INDUSTRY/jym_website_logo-removebg.png" 
+              alt="J&M Industry Logo" 
+              className="h-12 w-auto object-contain"
+            />
+          </Link>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8 items-center text-sm font-medium">
@@ -237,9 +242,13 @@ export default function LandingPage() {
           <div className="text-lg font-bold tracking-tighter">
             J&M Industry, LLC
           </div>
-          <p className="text-sm text-neutral-500">
-            © {new Date().getFullYear()} J&M Industry. Todos los derechos reservados.
-          </p>
+          <div className="flex flex-col md:flex-row gap-4 md:gap-8 items-center text-sm text-neutral-500">
+            <p>© {new Date().getFullYear()} J&M Industry. Todos los derechos reservados.</p>
+            <div className="flex gap-4">
+              <Link href="/privacy-policy" className="hover:text-neutral-900 transition-colors">Privacidad</Link>
+              <Link href="/terms-and-conditions" className="hover:text-neutral-900 transition-colors">Términos</Link>
+            </div>
+          </div>
           <div className="flex gap-6">
             <a href="#" className="text-neutral-400 hover:text-neutral-900 transition-colors">Twitter</a>
             <a href="#" className="text-neutral-400 hover:text-neutral-900 transition-colors">LinkedIn</a>
