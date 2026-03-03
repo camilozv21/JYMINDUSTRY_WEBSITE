@@ -1,6 +1,19 @@
 
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Política de Privacidad | J&M Industry",
+  description: "Conoce nuestra política de privacidad y cómo protegemos tus datos personales en J&M Industry.",
+  alternates: {
+    canonical: "/privacy-policy",
+  },
+  openGraph: {
+    title: "Política de Privacidad | J&M Industry",
+    description: "Conoce nuestra política de privacidad y cómo protegemos tus datos personales en J&M Industry.",
+  },
+};
 
 export default function PrivacyPolicy() {
   return (
@@ -67,9 +80,23 @@ export default function PrivacyPolicy() {
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-semibold mb-4 text-neutral-800">4. Compartir información</h2>
+            <h2 className="text-2xl font-semibold mb-4 text-neutral-800">4. Compartir información y Procesadores Terceros</h2>
             <p className="mb-4 text-neutral-600">
-              No vendemos, comercializamos ni alquilamos su información personal a terceros. Podemos compartir información genérica agregada no vinculada a ninguna información de identificación personal con nuestros socios comerciales y anunciantes de confianza.
+              J&M Industry colabora con proveedores de servicios de confianza para operar, mejorar y asegurar nuestros servicios. Al utilizar nuestras soluciones, usted reconoce y acepta el uso de los siguientes terceros:
+            </p>
+            <ul className="list-disc pl-6 space-y-2 text-neutral-600 mb-4">
+              <li>
+                <strong>Procesamiento de Pagos (Stripe):</strong> Utilizamos <strong>Stripe</strong> para procesar transacciones financieras de manera segura. J&M Industry no almacena ni tiene acceso a los datos completos de su tarjeta de crédito o cuenta bancaria. Toda la información financiera es gestionada directamente por Stripe bajo sus propios estándares de seguridad y política de privacidad.
+              </li>
+              <li>
+                <strong>Servicios de IA (Terceros):</strong> Nuestros agentes virtuales y sistemas de automatización utilizan modelos de Inteligencia Artificial de proveedores líderes (como OpenAI, Anthropic, ElevenLabs, entre otros) para el procesamiento de lenguaje natural y generación de contenido.
+              </li>
+              <li>
+                <strong>Seguridad de sus Datos:</strong> Aunque estos modelos son tercerizados, J&M Industry implementa capas de seguridad y anonimización de datos donde es posible. Sus datos son procesados por estos proveedores únicamente con el fin de generar las respuestas y acciones requeridas por el servicio. Estos proveedores están obligados a cumplir con regulaciones de protección de datos, asegurando que su información está a salvo.
+              </li>
+            </ul>
+            <p className="mb-4 text-neutral-600">
+              No vendemos, comercializamos ni alquilamos su información personal a terceros para fines comerciales o de marketing.
             </p>
           </section>
 

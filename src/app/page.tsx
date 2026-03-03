@@ -11,7 +11,21 @@ import {
   X, 
   ChevronRight, 
   Mail, 
-  ArrowRight 
+  ArrowRight,
+  MessageSquare,
+  BarChart,
+  Clock,
+  Target,
+  Users,
+  Smartphone,
+  Building,
+  Utensils,
+  Briefcase,
+  Cpu,
+  Layers,
+  Zap,
+  CheckCircle,
+  Globe
 } from "lucide-react";
 
 export default function LandingPage() {
@@ -140,6 +154,46 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* Value Proposition Section */}
+      <section className="py-24 bg-neutral-900 text-white px-6 md:px-12">
+        <div className="container mx-auto max-w-6xl">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="md:flex justify-between items-start gap-12"
+          >
+            <div className="md:w-1/2 mb-10 md:mb-0">
+              <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6 leading-tight">
+                No creamos "chatbots". <br />
+                <span className="text-neutral-400">Construimos sistemas conversacionales inteligentes.</span>
+              </h2>
+            </div>
+            <div className="md:w-1/2 space-y-6 text-lg text-neutral-300">
+              <p>
+                En JYM Industry transformamos la atención al cliente en una máquina de ventas 24/7.
+                Diseñamos e implementamos sistemas de automatización con IA entrenados con la 
+                data real de tu negocio, integrados directamente a tus canales de comunicación.
+              </p>
+              <ul className="space-y-3">
+                <li className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-green-500" />
+                  <span>Reducción de costos operativos</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-green-500" />
+                  <span>Aumento en velocidad de respuesta</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-green-500" />
+                  <span>Atención personalizada, no genérica</span>
+                </li>
+              </ul>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Services Section */}
       <section id="services" className="py-24 bg-neutral-50 px-6 md:px-12">
         <div className="container mx-auto max-w-6xl">
@@ -173,39 +227,205 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* Process Section */}
+      <section className="py-24 px-6 md:px-12 bg-white">
+        <div className="container mx-auto max-w-6xl">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-16 md:mb-24 text-center max-w-3xl mx-auto"
+          >
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">Nuestro Proceso</h2>
+            <p className="text-neutral-600 text-lg">
+              De la auditoría a un sistema operativo en tiempo record. 
+              Implementamos en 48 horas como estándar.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-4 gap-8">
+            <ProcessStep 
+              number="01" 
+              title="Auditoría Estratégica" 
+              description="Analizamos tu operación y base de conocimiento para estructurar un sistema RAG personalizado."
+              icon={<Target className="w-6 h-6" />}
+            />
+            <ProcessStep 
+              number="02" 
+              title="Arquitectura" 
+              description="Diseñamos la solución: reducción de tiempos, automatización de ventas y filtrado inteligente."
+              icon={<Cpu className="w-6 h-6" />}
+            />
+            <ProcessStep 
+              number="03" 
+              title="Implementación" 
+              description="Entrega del sistema funcional, integrado y listo para operar en menos de 48 horas."
+              icon={<Zap className="w-6 h-6" />}
+            />
+            <ProcessStep 
+              number="04" 
+              title="Optimización" 
+              description="Soporte 24/7 y ajustes estratégicos continuos basados en métricas reales."
+              icon={<BarChart className="w-6 h-6" />}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Target Industries Section */}
+      <section className="py-24 px-6 md:px-12 bg-neutral-50 border-y border-neutral-200">
+        <div className="container mx-auto max-w-6xl">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-16"
+          >
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">Impulsamos Tu Industria</h2>
+            <p className="text-neutral-600 text-lg max-w-2xl">
+              Desarrollamos soluciones para empresas que gestionan alto volumen de clientes y necesitan automatizar sin perder calidad.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            <IndustryCard icon={<Smartphone className="w-8 h-8" />} title="E-commerce" />
+            <IndustryCard icon={<Building className="w-8 h-8" />} title="Inmobiliarias" />
+            <IndustryCard icon={<Users className="w-8 h-8" />} title="Clínicas" />
+            <IndustryCard icon={<Utensils className="w-8 h-8" />} title="Restaurantes" />
+            <IndustryCard icon={<Briefcase className="w-8 h-8" />} title="Servicios" />
+          </div>
+          
+          <div className="mt-12 text-center">
+            <p className="inline-flex items-center text-neutral-500 font-medium">
+              <MessageSquare className="w-5 h-5 mr-2" />
+              Si recibes mensajes todos los días, podemos optimizarlos.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Success Story Section */}
+      <section className="py-24 px-6 md:px-12 bg-neutral-900 text-white overflow-hidden relative">
+        <div className="container mx-auto max-w-6xl relative z-10">
+          <div className="flex flex-col md:flex-row gap-12 items-center">
+            <div className="w-full md:w-1/2">
+               <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                >
+                  <span className="text-green-400 font-semibold tracking-wide uppercase text-sm mb-4 block">Caso de Éxito</span>
+                  <h2 className="text-4xl md:text-6xl font-bold mb-6">TDCOM</h2>
+                  <p className="text-neutral-400 text-xl leading-relaxed mb-8">
+                    Implementamos un sistema conversacional inteligente que transformó su atención al cliente, logrando una eficiencia operativa sin precedentes.
+                  </p>
+                  
+                  <div className="bg-neutral-800/50 p-6 rounded-2xl border border-neutral-700 inline-block">
+                    <div className="text-5xl font-bold text-white mb-2">40%</div>
+                    <div className="text-neutral-400">Reducción en tiempos de respuesta</div>
+                  </div>
+               </motion.div>
+            </div>
+            <div className="w-full md:w-1/2 relative">
+               <div className="aspect-video bg-neutral-800 rounded-2xl border border-neutral-700 p-8 flex flex-col justify-center items-center shadow-2xl">
+                  <div className="w-full space-y-4">
+                    {/* Mock chat bubbles */}
+                    <div className="bg-neutral-700/50 p-4 rounded-2xl rounded-tl-none self-start w-3/4 animate-pulse">
+                      <div className="h-2 w-1/2 bg-neutral-600 rounded mb-2"></div>
+                      <div className="h-2 w-3/4 bg-neutral-600 rounded"></div>
+                    </div>
+                    <div className="bg-green-600/20 p-4 rounded-2xl rounded-tr-none self-end w-3/4 ml-auto border border-green-500/30">
+                      <div className="h-2 w-2/3 bg-green-500/40 rounded mb-2"></div>
+                      <div className="h-2 w-full bg-green-500/40 rounded"></div>
+                    </div>
+                  </div>
+                  <p className="mt-8 text-sm text-neutral-500 font-mono">Automatización estratégica, no respuestas genéricas.</p>
+               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Philosophy / About Section */}
       <section id="about" className="py-24 px-6 md:px-12 bg-white">
-        <div className="container mx-auto max-w-6xl flex flex-col md:flex-row gap-16 items-center">
-          <div className="w-full md:w-1/2">
+        <div className="container mx-auto max-w-6xl flex flex-col md:flex-row gap-16 items-start">
+          <div className="w-full md:w-1/2 sticky top-24">
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-8">Tecnología Invisible, <br /> Resultados Visibles.</h2>
+            <div className="space-y-6">
+              <p className="text-neutral-600 text-lg leading-relaxed">
+                En <strong className="text-neutral-900">JYM Industry</strong>, creemos que la mejor tecnología es la que no se nota. 
+                Nuestros sistemas RAG (Retrieval-Augmented Generation) permiten que la IA responda con precisión basada en TU conocimiento, no en generalidades.
+              </p>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
+                 <div className="p-4 bg-neutral-50 rounded-lg border border-neutral-100">
+                    <Globe className="w-6 h-6 mb-2 text-neutral-900" />
+                    <h4 className="font-bold mb-1">Multicanal</h4>
+                    <p className="text-sm text-neutral-500">WhatsApp, Instagram, Messenger unificados.</p>
+                 </div>
+                 <div className="p-4 bg-neutral-50 rounded-lg border border-neutral-100">
+                    <Layers className="w-6 h-6 mb-2 text-neutral-900" />
+                    <h4 className="font-bold mb-1">Integración CRM</h4>
+                    <p className="text-sm text-neutral-500">Conectamos con tus sistemas internos reales.</p>
+                 </div>
+                 <div className="p-4 bg-neutral-50 rounded-lg border border-neutral-100">
+                    <Sparkles className="w-6 h-6 mb-2 text-neutral-900" />
+                    <h4 className="font-bold mb-1">ElevenLabs</h4>
+                    <p className="text-sm text-neutral-500">Voces hiperrealistas con control emocional.</p>
+                 </div>
+                 <div className="p-4 bg-neutral-50 rounded-lg border border-neutral-100">
+                    <Brain className="w-6 h-6 mb-2 text-neutral-900" />
+                    <h4 className="font-bold mb-1">Análisis de Tono</h4>
+                    <p className="text-sm text-neutral-500">Detección y manejo inteligente de usuarios.</p>
+                 </div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="w-full md:w-1/2 space-y-12">
             <motion.div 
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="aspect-square bg-neutral-100 rounded-2xl overflow-hidden relative flex items-center justify-center p-8"
+              className="aspect-square bg-linear-to-br from-neutral-100 to-white rounded-2xl overflow-hidden relative flex items-center justify-center border border-neutral-100 p-8"
             >
               {/* Abstract visuals representing AI logic */}
               <div className="absolute inset-0 flex items-center justify-center text-neutral-200">
-                <Brain className="w-32 h-32 md:w-48 md:h-48" strokeWidth={0.5} />
+                <Brain className="w-32 h-32 md:w-48 md:h-48 opacity-10" />
+              </div>
+              
+              <div className="relative z-10 w-full max-w-sm space-y-4">
+                 <div className="bg-white p-4 rounded-xl shadow-lg border border-neutral-100 flex items-center gap-4">
+                    <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center text-green-600">
+                      <CheckCircle className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <div className="text-sm font-bold text-neutral-900">Entrenado con tu Data</div>
+                      <div className="text-xs text-neutral-500">Base de conocimiento propia</div>
+                    </div>
+                 </div>
+                 
+                 <div className="bg-white p-4 rounded-xl shadow-lg border border-neutral-100 flex items-center gap-4 ml-8">
+                    <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600">
+                      <Clock className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <div className="text-sm font-bold text-neutral-900">48h Deployment</div>
+                      <div className="text-xs text-neutral-500">Implementación rápida</div>
+                    </div>
+                 </div>
+
+                 <div className="bg-white p-4 rounded-xl shadow-lg border border-neutral-100 flex items-center gap-4">
+                    <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center text-purple-600">
+                      <Bot className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <div className="text-sm font-bold text-neutral-900">Agentes Autónomos</div>
+                      <div className="text-xs text-neutral-500">Ejecutan tareas complejas</div>
+                    </div>
+                 </div>
               </div>
             </motion.div>
-          </div>
-          <div className="w-full md:w-1/2 space-y-8">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Menos Fricción, <br />Más Resultados.</h2>
-            <p className="text-neutral-600 text-lg leading-relaxed">
-              En <strong className="text-neutral-900">J&M Industry</strong>, creemos que la tecnología debe ser invisible y potente. 
-              No implementamos IA solo por tendencia, sino para eliminar cuellos de botella reales en tu operación.
-              Nuestro enfoque minimalista se centra en la claridad, la velocidad y el retorno de inversión.
-            </p>
-            <div className="grid grid-cols-2 gap-6 pt-4">
-              <div>
-                <h4 className="text-4xl font-bold mb-2">98%</h4>
-                <p className="text-sm text-neutral-500 uppercase tracking-wide">Precisión</p>
-              </div>
-              <div>
-                <h4 className="text-4xl font-bold mb-2">24/7</h4>
-                <p className="text-sm text-neutral-500 uppercase tracking-wide">Disponibilidad</p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -278,6 +498,42 @@ function ServiceCard({ icon, title, description }: { icon: React.ReactNode, titl
         <span className="group-hover:mr-2 transition-all">Saber más</span>
         <ChevronRight className="w-4 h-4 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
       </div>
+    </motion.div>
+  );
+}
+
+function ProcessStep({ number, title, description, icon }: { number: string, title: string, description: string, icon: React.ReactNode }) {
+  return (
+    <motion.div 
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="relative p-6 pt-12 border-t border-neutral-200"
+    >
+      <div className="absolute top-0 left-0 -translate-y-1/2 bg-white pr-4">
+         <div className="w-10 h-10 rounded-full bg-neutral-900 text-white flex items-center justify-center font-bold text-sm">
+            {number}
+         </div>
+      </div>
+      <div className="mb-4 text-neutral-900">{icon}</div>
+      <h3 className="text-lg font-bold mb-2">{title}</h3>
+      <p className="text-neutral-600 text-sm leading-relaxed">{description}</p>
+    </motion.div>
+  );
+}
+
+function IndustryCard({ icon, title }: { icon: React.ReactNode, title: string }) {
+  return (
+    <motion.div 
+      initial={{ opacity: 0, scale: 0.95 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true }}
+      className="p-6 bg-white border border-neutral-100 rounded-xl flex flex-col items-center justify-center text-center hover:shadow-lg hover:border-neutral-200 transition-all gap-4 group cursor-default"
+    >
+      <div className="text-neutral-400 group-hover:text-neutral-900 transition-colors">
+        {icon}
+      </div>
+      <span className="font-semibold text-neutral-800">{title}</span>
     </motion.div>
   );
 }

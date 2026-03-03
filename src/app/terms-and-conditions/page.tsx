@@ -1,6 +1,19 @@
 
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Términos y Condiciones | J&M Industry",
+  description: "Lee nuestros términos y condiciones para el uso de nuestros servicios de automatización e IA.",
+  alternates: {
+    canonical: "/terms-and-conditions",
+  },
+  openGraph: {
+    title: "Términos y Condiciones | J&M Industry",
+    description: "Lee nuestros términos y condiciones para el uso de nuestros servicios de automatización e IA.",
+  },
+};
 
 export default function TermsAndConditions() {
   return (
@@ -42,40 +55,60 @@ export default function TermsAndConditions() {
           <section className="mb-10">
             <h2 className="text-2xl font-semibold mb-4 text-neutral-800">2. Servicios de Automatización e IA</h2>
             <p className="mb-4 text-neutral-600">
-              Proporcionamos servicios de consultoría, desarrollo e implementación de soluciones de automatización e inteligencia artificial. Nos esforzamos por garantizar que nuestros servicios sean precisos y útiles, pero no garantizamos resultados específicos, ya que estos pueden variar según la implementación y el contexto del cliente.
+              J&M Industry proporciona sistemas conversacionales avanzados, automatización de procesos y agentes virtuales inteligentes. Al contratarnos, usted acepta que:
             </p>
+            <ul className="list-disc pl-6 space-y-2 text-neutral-600 mb-4">
+               <li>
+                 <strong>Tecnología Tercerizada:</strong> Utilizamos proveedores de Inteligencia Artificial de terceros (modelos propietarios como GPT-4, Claude, ElevenLabs, entre otros) para generar respuestas y contenido. Si bien estos proveedores cumplen con altos estándares de seguridad, sus datos (texto, voz) son procesados por ellos para el funcionamiento del servicio.
+               </li>
+               <li>
+                 <strong>Precisión:</strong> Aunque nuestros agentes son entrenados con su información específica, la IA puede, en ocasiones, producir respuestas imprecisas o generalizadas. J&M Industry monitorea constantemente la calidad, pero la tecnología no es infalible.
+               </li>
+            </ul>
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-semibold mb-4 text-neutral-800">3. Propiedad Intelectual</h2>
+            <h2 className="text-2xl font-semibold mb-4 text-neutral-800">3. Pagos y Cancelaciones</h2>
+            <p className="mb-4 text-neutral-600">
+              Todos los cobros y suscripciones se gestionan de manera segura a través de <strong>Stripe</strong>.
+            </p>
+            <ul className="list-disc pl-6 space-y-2 text-neutral-600 mb-4">
+              <li>Usted acepta que al contratar un servicio recurrente, se le cobrará automáticamente según la frecuencia pactada.</li>
+              <li>J&M Industry no almacena sus datos financieros completos; estos son manejados exclusivamente por Stripe.</li>
+              <li>Para cancelaciones, debe contactarnos con al menos 3 días de antelación a su próxima fecha de facturación.</li>
+            </ul>
+          </section>
+
+          <section className="mb-10">
+            <h2 className="text-2xl font-semibold mb-4 text-neutral-800">4. Propiedad Intelectual</h2>
             <p className="mb-4 text-neutral-600">
               El contenido, las características y la funcionalidad de nuestro sitio web y servicios (incluidos, entre otros, toda la información, software, texto, pantallas, imágenes, video y audio) son propiedad de J&M Industry y están protegidos por derechos de autor, marcas comerciales y otras leyes de propiedad intelectual.
             </p>
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-semibold mb-4 text-neutral-800">4. Limitación de Responsabilidad</h2>
+            <h2 className="text-2xl font-semibold mb-4 text-neutral-800">5. Limitación de Responsabilidad</h2>
             <p className="mb-4 text-neutral-600">
               En ningún caso J&M Industry, ni sus directores, empleados, socios, agentes, proveedores o afiliados, serán responsables de daños indirectos, incidentales, especiales, consecuentes o punitivos, incluidos, entre otros, la pérdida de beneficios, datos, uso, buena voluntad u otras pérdidas intangibles, resultantes de su acceso o uso o la imposibilidad de acceder o usar el servicio.
             </p>
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-semibold mb-4 text-neutral-800">5. Modificaciones</h2>
+            <h2 className="text-2xl font-semibold mb-4 text-neutral-800">6. Modificaciones</h2>
             <p className="mb-4 text-neutral-600">
               Nos reservamos el derecho, a nuestra entera discreción, de modificar o reemplazar estos Términos en cualquier momento. Es su responsabilidad revisar estos Términos periódicamente. El uso continuado de nuestros servicios después de cualquier cambio constituye la aceptación de los nuevos Términos.
             </p>
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-semibold mb-4 text-neutral-800">6. Ley Aplicable</h2>
+            <h2 className="text-2xl font-semibold mb-4 text-neutral-800">7. Ley Aplicable</h2>
             <p className="mb-4 text-neutral-600">
               Estos Términos se regirán e interpretarán de acuerdo con las leyes vigentes en la jurisdicción donde opera J&M Industry, sin tener en cuenta sus disposiciones sobre conflictos de leyes.
             </p>
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-semibold mb-4 text-neutral-800">7. Contacto</h2>
+            <h2 className="text-2xl font-semibold mb-4 text-neutral-800">8. Contacto</h2>
             <p className="mb-4 text-neutral-600">
               Si tiene alguna pregunta sobre estos Términos, por favor contáctenos a través de los canales proporcionados en nuestro sitio web.
             </p>
