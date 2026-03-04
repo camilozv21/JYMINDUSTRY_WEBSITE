@@ -2,7 +2,9 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import ContactModal from "@/components/ContactModal";
 import { 
   Bot, 
   Sparkles, 
@@ -31,6 +33,7 @@ import {
 export default function LandingPage() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isContactOpen, setIsContactOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -65,10 +68,13 @@ export default function LandingPage() {
       >
         <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
           <Link href="/">
-            <img 
+            <Image 
               src="https://df50lbm4qcrt6.cloudfront.net/JYM_INDUSTRY/jym_website_logo-removebg.png" 
               alt="J&M Industry Logo" 
+              width={180}
+              height={48}
               className="h-12 w-auto object-contain"
+              priority
             />
           </Link>
 
@@ -108,6 +114,8 @@ export default function LandingPage() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 px-6 md:px-12 overflow-hidden">
@@ -449,7 +457,7 @@ export default function LandingPage() {
             <a href="mailto:jymindustry@jymindustry.com" className="w-full md:w-auto px-8 py-4 bg-white text-neutral-900 rounded-full font-medium hover:bg-neutral-100 transition-colors flex items-center justify-center text-base">
               <Mail className="mr-2 w-5 h-5" /> jymindustry@jymindustry.com
             </a>
-            <button className="w-full md:w-auto px-8 py-4 border border-neutral-700 rounded-full font-medium hover:bg-neutral-800 transition-colors text-base">
+            <button onClick={() => setIsContactOpen(true)} className="w-full md:w-auto px-8 py-4 border border-neutral-700 rounded-full font-medium hover:bg-neutral-800 transition-colors text-base">
               Agendar Demo
             </button>
           </div>
@@ -533,7 +541,7 @@ function IndustryCard({ icon, title }: { icon: React.ReactNode, title: string })
       <div className="text-neutral-400 group-hover:text-neutral-900 transition-colors">
         {icon}
       </div>
-      <span className="font-semibold text-neutral-800">{title}</span>
+      <h3 className="font-semibold text-neutral-800">{title}</h3>
     </motion.div>
   );
 }

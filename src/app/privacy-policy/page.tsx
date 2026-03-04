@@ -1,5 +1,6 @@
 
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft } from "lucide-react";
 import type { Metadata } from "next";
 
@@ -26,10 +27,11 @@ export default function PrivacyPolicy() {
           </Link>
           <Link href="/" className="relative">
              <div className="absolute top-1/2 -translate-y-1/2 right-0 w-40 h-24 flex justify-end items-center">
-              <img 
+              <Image 
                 src="https://df50lbm4qcrt6.cloudfront.net/JYM_INDUSTRY/JyMlogo_no_bvackground-removebg-preview.png" 
                 alt="J&M Industry Logo" 
-                className="h-full w-auto object-contain max-w-none"
+                fill
+                className="object-contain max-w-none"
               />
             </div>
             <div className="w-20 h-10"></div>
