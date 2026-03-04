@@ -50,7 +50,7 @@ export default function TermsAndConditions() {
           <section className="mb-10">
             <h2 className="text-2xl font-semibold mb-4 text-neutral-800">1. Aceptación de los Términos</h2>
             <p className="mb-4 text-neutral-600">
-              Al acceder y utilizar el sitio web y los servicios de J&M Industry ("la Empresa"), usted acepta estar sujeto a estos Términos y Condiciones y a todas las leyes y regulaciones aplicables. Si no está de acuerdo con alguno de estos términos, tiene prohibido usar o acceder a este sitio.
+              Al acceder y utilizar el sitio web y los servicios de J&M Industry (&quot;la Empresa&quot;), usted acepta estar sujeto a estos Términos y Condiciones y a todas las leyes y regulaciones aplicables. Si no está de acuerdo con alguno de estos términos, tiene prohibido usar o acceder a este sitio.
             </p>
           </section>
 

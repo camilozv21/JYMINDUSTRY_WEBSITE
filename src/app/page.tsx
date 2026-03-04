@@ -173,7 +173,7 @@ export default function LandingPage() {
           >
             <div className="md:w-1/2 mb-10 md:mb-0">
               <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6 leading-tight">
-                No creamos "chatbots". <br />
+                No creamos &quot;chatbots&quot;. <br />
                 <span className="text-neutral-400">Construimos sistemas conversacionales inteligentes.</span>
               </h2>
             </div>

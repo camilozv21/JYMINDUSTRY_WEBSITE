@@ -50,7 +50,7 @@ export default function PrivacyPolicy() {
           <section className="mb-10">
             <h2 className="text-2xl font-semibold mb-4 text-neutral-800">1. Introducción</h2>
             <p className="mb-4 text-neutral-600">
-              En J&M Industry ("nosotros", "nuestro" o "la Empresa"), respetamos su privacidad y nos comprometemos a proteger sus datos personales. Esta Política de Privacidad explica cómo recopilamos, utilizamos, divulgamos y protegemos su información cuando visita nuestro sitio web o utiliza nuestros servicios de automatización e inteligencia artificial.
+              En J&M Industry (&quot;nosotros&quot;, &quot;nuestro&quot; o &quot;la Empresa&quot;), respetamos su privacidad y nos comprometemos a proteger sus datos personales. Esta Política de Privacidad explica cómo recopilamos, utilizamos, divulgamos y protegemos su información cuando visita nuestro sitio web o utiliza nuestros servicios de automatización e inteligencia artificial.
             </p>
           </section>
 
