@@ -1,22 +1,16 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import ContactModal from "@/components/ContactModal";
 import { 
   Bot, 
   Sparkles, 
   Brain, 
-  Menu, 
-  X, 
-  ChevronRight, 
-  Mail, 
   ArrowRight,
   MessageSquare,
   BarChart,
-  Clock,
   Target,
   Users,
   Smartphone,
@@ -24,24 +18,19 @@ import {
   Utensils,
   Briefcase,
   Cpu,
-  Layers,
   Zap,
   CheckCircle,
-  Globe
+  Mail,
+  Globe,
+  Layers,
+  Clock
 } from "lucide-react";
+import ProcessStep from "@/components/ProcessStep";
+import ServiceCard from "@/components/ServiceCard";
+import IndustryCard from "@/components/IndustryCard";
 
 export default function LandingPage() {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isContactOpen, setIsContactOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 60 },
@@ -60,60 +49,6 @@ export default function LandingPage() {
 
   return (
     <div className="min-h-screen bg-white text-neutral-900 font-sans selection:bg-neutral-900 selection:text-white">
-      {/* Navigation */}
-      <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled ? "bg-white/80 backdrop-blur-md border-b border-neutral-100 py-4" : "bg-transparent py-6"
-        }`}
-      >
-        <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
-          <Link href="/">
-            <Image 
-              src="https://df50lbm4qcrt6.cloudfront.net/JYM_INDUSTRY/jym_website_logo-removebg.png" 
-              alt="J&M Industry Logo" 
-              width={180}
-              height={48}
-              className="h-12 w-auto object-contain"
-              priority
-            />
-          </Link>
-
-          {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8 items-center text-sm font-medium">
-            <a href="#services" className="hover:text-neutral-500 transition-colors">Servicios</a>
-            <a href="#about" className="hover:text-neutral-500 transition-colors">Nosotros</a>
-            <a href="#contact" className="px-5 py-2.5 bg-neutral-900 text-white rounded-full hover:bg-neutral-700 transition-colors">
-              Contactar
-            </a>
-          </div>
-
-          {/* Mobile Menu Toggle */}
-          <button 
-            className="md:hidden p-2 text-neutral-900"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
-            {mobileMenuOpen ? <X /> : <Menu />}
-          </button>
-        </div>
-      </nav>
-
-      {/* Mobile Menu Overlay */}
-      <AnimatePresence>
-        {mobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-40 bg-white pt-24 px-6 md:hidden"
-          >
-            <div className="flex flex-col space-y-6 text-2xl font-medium">
-              <a href="#services" onClick={() => setMobileMenuOpen(false)}>Servicios</a>
-              <a href="#about" onClick={() => setMobileMenuOpen(false)}>Nosotros</a>
-              <a href="#contact" onClick={() => setMobileMenuOpen(false)}>Contactar</a>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
 
       <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
 
@@ -141,13 +76,16 @@ export default function LandingPage() {
             </motion.p>
 
             <motion.div variants={fadeInUp} className="flex flex-col md:flex-row gap-4 pt-4">
-              <a href="#contact" className="group inline-flex items-center justify-center px-8 py-4 bg-neutral-900 text-white rounded-full font-medium transition-transform hover:scale-105">
+              <button 
+                onClick={() => setIsContactOpen(true)}
+                className="group inline-flex items-center justify-center px-8 py-4 bg-neutral-900 text-white rounded-full font-medium transition-transform hover:scale-105"
+              >
                 Empezar Ahora
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </a>
-              <a href="#services" className="inline-flex items-center justify-center px-8 py-4 border border-neutral-200 rounded-full font-medium hover:bg-neutral-50 transition-colors">
+              </button>
+              <Link href="/services" className="inline-flex items-center justify-center px-8 py-4 border border-neutral-200 rounded-full font-medium hover:bg-neutral-50 transition-colors">
                 Ver Soluciones
-              </a>
+              </Link>
             </motion.div>
           </motion.div>
         </div>
@@ -354,7 +292,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Philosophy / About Section */}
+      {/* Philosophy / About Section (Abbreviated compared to new page) */}
       <section id="about" className="py-24 px-6 md:px-12 bg-white">
         <div className="container mx-auto max-w-6xl flex flex-col md:flex-row gap-16 items-start">
           <div className="w-full md:w-1/2 sticky top-24">
@@ -485,63 +423,5 @@ export default function LandingPage() {
         </div>
       </footer>
     </div>
-  );
-}
-
-function ServiceCard({ icon, title, description }: { icon: React.ReactNode, title: string, description: string }) {
-  return (
-    <motion.div 
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
-      className="p-8 border border-neutral-200 rounded-2xl hover:border-neutral-400 transition-colors bg-white group h-full flex flex-col"
-    >
-      <div className="w-12 h-12 bg-neutral-50 rounded-lg flex items-center justify-center mb-6 text-neutral-900 group-hover:scale-110 transition-transform duration-300">
-        {icon}
-      </div>
-      <h3 className="text-xl font-bold mb-3">{title}</h3>
-      <p className="text-neutral-600 leading-relaxed text-sm md:text-base grow">{description}</p>
-      
-      <div className="mt-6 pt-6 border-t border-neutral-100 flex items-center text-sm font-medium text-neutral-900">
-        <span className="group-hover:mr-2 transition-all">Saber más</span>
-        <ChevronRight className="w-4 h-4 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
-      </div>
-    </motion.div>
-  );
-}
-
-function ProcessStep({ number, title, description, icon }: { number: string, title: string, description: string, icon: React.ReactNode }) {
-  return (
-    <motion.div 
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      className="relative p-6 pt-12 border-t border-neutral-200"
-    >
-      <div className="absolute top-0 left-0 -translate-y-1/2 bg-white pr-4">
-         <div className="w-10 h-10 rounded-full bg-neutral-900 text-white flex items-center justify-center font-bold text-sm">
-            {number}
-         </div>
-      </div>
-      <div className="mb-4 text-neutral-900">{icon}</div>
-      <h3 className="text-lg font-bold mb-2">{title}</h3>
-      <p className="text-neutral-600 text-sm leading-relaxed">{description}</p>
-    </motion.div>
-  );
-}
-
-function IndustryCard({ icon, title }: { icon: React.ReactNode, title: string }) {
-  return (
-    <motion.div 
-      initial={{ opacity: 0, scale: 0.95 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: true }}
-      className="p-6 bg-white border border-neutral-100 rounded-xl flex flex-col items-center justify-center text-center hover:shadow-lg hover:border-neutral-200 transition-all gap-4 group cursor-default"
-    >
-      <div className="text-neutral-400 group-hover:text-neutral-900 transition-colors">
-        {icon}
-      </div>
-      <h3 className="font-semibold text-neutral-800">{title}</h3>
-    </motion.div>
   );
 }
