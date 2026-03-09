@@ -30,7 +30,7 @@ function Hero({ onContactOpen }: HeroProps) {
 
   return (
     <div className="w-full pt-16">
-      <div className="container mx-auto">
+      <div className="container mx-auto px-6 md:px-12">
         <div className="flex gap-8 py-20 lg:py-40 items-center justify-center flex-col">
           <div>
             <Button variant="secondary" size="sm" className="gap-3 rounded-full border border-neutral-200">
@@ -71,16 +71,16 @@ function Hero({ onContactOpen }: HeroProps) {
             </p>
           </div>
 
-          <div className="flex flex-row gap-3">
+          <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
             <Button
               size="lg"
-              className="gap-4 rounded-full cursor-pointer border border-neutral-900 hover:bg-neutral-100"
+              className="gap-4 rounded-full cursor-pointer border border-neutral-900 hover:bg-neutral-100 w-full sm:w-auto"
               variant="outline"
               onClick={onContactOpen}
             >
               Agendar Demo <PhoneCall className="w-4 h-4" />
             </Button>
-            <Button size="lg" className="gap-4 rounded-full text-white bg-neutral-900 hover:bg-neutral-800" asChild>
+            <Button size="lg" className="gap-4 rounded-full text-white bg-neutral-900 hover:bg-neutral-800 w-full sm:w-auto" asChild>
               <Link href="/services">
                 Ver Soluciones <MoveRight className="w-4 h-4" />
               </Link>
