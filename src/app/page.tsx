@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import ContactModal from "@/components/ContactModal";
@@ -30,12 +31,25 @@ import IndustryCard from "@/components/IndustryCard";
 import { SplineSceneBasic } from "@/components/ui/demo";
 import { Hero } from "@/components/ui/animated-hero";
 
+function DemoParamWatcher({ onOpen }: { onOpen: () => void }) {
+  const searchParams = useSearchParams();
+  useEffect(() => {
+    if (searchParams.get("demo") === "true") {
+      onOpen();
+    }
+  }, []);
+  return null;
+}
+
 export default function LandingPage() {
   const [isContactOpen, setIsContactOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-white text-neutral-900 font-sans selection:bg-neutral-900 selection:text-white">
 
+      <Suspense fallback={null}>
+        <DemoParamWatcher onOpen={() => setIsContactOpen(true)} />
+      </Suspense>
       <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
 
       {/* Hero Section */}
